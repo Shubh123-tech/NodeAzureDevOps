@@ -21,6 +21,8 @@ steps:
   displayName: 'npm install and build' 
 - task: CopyFiles@2
   inputs:
-    SourceFolder: '$(build.sourcedirectory)/dist'
-    Contents: '**/*'
-    TargetFolder: '$(build.artifactstagingdirectory)'
+    SourceFolder: '$(Build.SourcesDirectory)'
+    Contents: |
+             src/*
+             public/*
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
